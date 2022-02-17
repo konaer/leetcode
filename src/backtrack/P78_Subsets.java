@@ -27,43 +27,43 @@ public class P78_Subsets {
 	//递归，
 	//时间n*2^n， 一共2^n个可能，每一个需要n的时间构造list
 	//空间 list是n， 栈空间是n，综合起来是n
-	List<List<Integer>> ans = new ArrayList<>();
-	List<Integer> list = new ArrayList<>();
-	
-	public List<List<Integer>> subsets(int[] nums) {
-		dfs(0, nums);
-		return ans;
-	}
-	
-	private void dfs(int cur, int[] nums) {
-		if (cur == nums.length) {
-			ans.add(new ArrayList<>(list));
-			//别忘了这里需要return
-			return;
-		}
-		
-		list.add(nums[cur]);
-		dfs(cur + 1, nums);
-		list.remove(list.size() - 1);
-		dfs(cur + 1, nums);	
-	}
+//	List<List<Integer>> ans = new ArrayList<>();
+//	List<Integer> list = new ArrayList<>();
+//	
+//	public List<List<Integer>> subsets(int[] nums) {
+//		dfs(0, nums);
+//		return ans;
+//	}
+//	
+//	private void dfs(int cur, int[] nums) {
+//		if (cur == nums.length) {
+//			ans.add(new ArrayList<>(list));
+//			//别忘了这里需要return
+//			return;
+//		}
+//		
+//		list.add(nums[cur]);
+//		dfs(cur + 1, nums);
+//		list.remove(list.size() - 1);
+//		dfs(cur + 1, nums);	
+//	}
 	
 	
 	//第三种解法，按照1， 1,2 1,2,3， 2， 2,3， 3这个顺序递归的
-//	List<List<Integer>> ans = new ArrayList<>();
-//    List<Integer> list = new ArrayList<>();
-//
-//    public List<List<Integer>> subsets(int[] nums) {
-//        dfs(nums, 0);
-//        return ans;
-//    }
-//
-//    private void dfs(int[] nums, int index) {
-//        ans.add(new ArrayList<>(list));
-//        for (int i = index; i < nums.length; i++) {
-//            list.add(nums[i]);
-//            dfs(nums, i + 1);
-//            list.remove(list.size() - 1);
-//        }
-//    }
+	List<List<Integer>> ans = new ArrayList<>();
+    List<Integer> list = new ArrayList<>();
+
+    public List<List<Integer>> subsets(int[] nums) {
+        dfs(nums, 0);
+        return ans;
+    }
+
+    private void dfs(int[] nums, int index) {
+        ans.add(new ArrayList<>(list));
+        for (int i = index; i < nums.length; i++) {
+            list.add(nums[i]);
+            dfs(nums, i + 1);
+            list.remove(list.size() - 1);
+        }
+    }
 }
