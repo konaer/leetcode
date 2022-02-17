@@ -96,6 +96,10 @@ public class commonAPI {
 		char c = '9';
 		int a = Character.getNumericValue(c);
 		
+		//int to char
+		char c = '9';
+		int a = c - '0';
+		
 		//Deque 和 stack 的区别，遍历时候一个正向，一个反向
 		
 		//Integer list 变成 int array

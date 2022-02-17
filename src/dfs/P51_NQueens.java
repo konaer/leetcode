@@ -1,4 +1,4 @@
-package backtrack;
+package dfs;
 
 import java.util.List;
 import java.util.Set;
@@ -60,46 +60,48 @@ public class P51_NQueens {
 //        return board;
 //    }
 	
-	List<List<String>> results = new ArrayList<>();	
-	public List<List<String>> solveNQueens(int n)  {
-		char[][] board = new char[n][n];
-		for (char[] row : board) {
-			Arrays.fill(row, '.');
-		}
-		backtrack(board, n, 0);
-		return results;
-	}
-	
-	private void backtrack(char[][] board, int n, int row) {
-		if (row == n) {
-			List<String> result = generateRes(board);
-			results.add(result);
-			return;
-		}
-		
-		for (int i = 0; i < n; i++) {
-			if (isValid(board, n, row, i)) {
-				board[row][i] = 'Q';
-				backtrack(board, n, row + 1);
-				board[row][i] = '.';
-			}
-		}
-	}
-	
-	private boolean isValid(char[][] board, int n, int row, int col) {
-		for (int i = 0; i < row; i++) {
-			if (board[i][col] == 'Q') return false;
-			if (col - (row - i) >= 0 && board[i][col - (row - i)] == 'Q') return false;
-			if (col + (row - i) < n && board[i][col + (row - i)] == 'Q') return false;
-		}
-		return true;
-	}
-	
-	private List<String> generateRes(char[][] board) {
-		List<String> result = new ArrayList<>();
-		for (char[] row : board) {
-			result.add(new String(row));
-		}
-		return result;
-	}
+	List<List<String>> ans = new ArrayList<>();
+
+    public List<List<String>> solveNQueens(int n) {
+        char[][] board = new char[n][n];
+        for (char[] row : board) {
+            Arrays.fill(row, '.');
+        }
+        dfs(board, 0);
+        return ans;
+    }
+
+    private void dfs(char[][] board, int row) {
+        if (row == board.length) {
+            ans.add(generateAns(board));
+            return;
+        }
+
+        for (int i = 0; i < board.length; i++) {
+            if (isValid(board, row, i)) {
+                board[row][i] = 'Q';
+                dfs(board, row + 1);
+                board[row][i] = '.';
+            }
+        }
+    }
+
+    private boolean isValid(char[][] board, int row, int col) {
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < board[0].length; j++) {
+                if (board[i][j] == 'Q' && (j == col || row + col == i + j || row + j == i + col)) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    private List<String> generateAns(char[][] board) {
+        List<String> list = new ArrayList<>();
+        for (char[] row : board) {
+            list.add(new String(row));
+        }
+        return list;
+    }
 }
