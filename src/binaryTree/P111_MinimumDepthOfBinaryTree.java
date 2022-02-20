@@ -1,4 +1,4 @@
-package dfs;
+package binaryTree;
 
 public class P111_MinimumDepthOfBinaryTree {
 	//time n

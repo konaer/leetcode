@@ -111,7 +111,8 @@ public class commonAPI {
 		List<String> list = Arrays.asList(arr);
 		Collections.reverse(list);
 		
-		
+		//求list的和
+		stack.stream().mapToInt(i ->i).sum();
 		
 		
 	}

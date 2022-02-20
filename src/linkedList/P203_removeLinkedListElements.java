@@ -1,5 +1,7 @@
 package linkedList;
 
+import backtrack.ListNode;
+
 public class P203_removeLinkedListElements {
 	public ListNode removeElements(ListNode head, int val) {
 		if (head == null) {
@@ -17,5 +19,16 @@ public class P203_removeLinkedListElements {
 			}
 		}
 		return dummy.next;
+    }
+	
+	//dfs
+	public ListNode removeElements(ListNode head, int val) {
+        if (head == null) {
+            return head;
+        }
+        
+        //先判断head.next，再去处理head
+        head.next = removeElements(head.next, val);
+        return head.val == val ? head.next : head;
     }
 }

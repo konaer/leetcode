@@ -57,16 +57,13 @@ public class P215_KthLargestElementInArray {
 	//总时间 n + klogn = nlogn
 	//空间 heap的空间， 放了n个数
 	public int findKthLargest(int[] nums, int k) {
-		Queue<Integer> heap = new PriorityQueue<>((a, b) -> b - a);
-		for (int num : nums) {
-			heap.offer(num);
-		}
-		
-		int ans = 0;
-		while (k > 0) {
-			ans = heap.poll();
-			k--;
-		}
-		return ans;
+		Queue<Integer> pq = new PriorityQueue<>();
+        for (int num : nums) {
+            pq.offer(num);
+            if (pq.size() > k) {
+                pq.poll();
+            }
+        }
+        return pq.poll();
 	}
 }
