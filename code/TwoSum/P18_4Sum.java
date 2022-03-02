@@ -3,6 +3,8 @@ package twoPointer;
 import java.util.*;
 
 public class P18_4Sum {
+	//time n^3
+	//space sort space logn
 	public List<List<Integer>> fourSum(int[] nums, int target) {
 		List<List<Integer>> ans = new ArrayList<>();
 		if (nums == null && nums.length < 4) {
@@ -38,6 +40,7 @@ public class P18_4Sum {
 					if (sum == target) {
 						List<Integer> list = List.of(nums[i], nums[j], nums[l++], nums[r--]);
 						ans.add(list);
+						//别忘了l< r 这个条件
 						while (l < r && nums[l] == nums[l - 1]) {
 							l++;
 						}

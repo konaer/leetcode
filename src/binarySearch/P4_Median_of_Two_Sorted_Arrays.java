@@ -2,6 +2,8 @@ package binarySearch;
 
 public class P4_Median_of_Two_Sorted_Arrays {
 	
+	//时间 log(min(m, n))
+	//空间 l
 	public double findMedianSortedArrays(int[] nums1, int[] nums2) {
 		int m = nums1.length;
 		int n = nums2.length;

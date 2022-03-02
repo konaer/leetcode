@@ -114,6 +114,14 @@ public class commonAPI {
 		//求list的和
 		stack.stream().mapToInt(i ->i).sum();
 		
+		//清空stringbuilder
+		StringBuilder sb = new StringBuilder();
+		sb.setLength(0);
+		
+		
+		//substring, 不算越界，但是打不出来的情况
+		String s = "abc";
+    	String sb = s.substring(3,3);
 		
 	}
 }

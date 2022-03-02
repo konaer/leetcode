@@ -2,7 +2,7 @@ package dfs;
 
 import java.util.Set;
 
-public class N694_NumberOfDistinctIslands {
+public class P694_NumberOfDistinctIslands {
 	//time mn
 	//space mn
 	public int numDistinctIslands(int[][] grid) {

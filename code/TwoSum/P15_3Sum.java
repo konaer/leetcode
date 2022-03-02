@@ -27,10 +27,8 @@ public class P15_3Sum {
 			while (l < r) {
 				int sum = nums[l] + nums[r] + nums[i];
 				if (sum == 0) {
-					//注意是index还是element
-					List<Integer> list = List.of(nums[i], nums[l++],nums[r--]);
-					//注意是要index还是element
-					result.add(list);
+					//注意这里要移动指针！！
+					result.add(List.of(nums[i], nums[l++],nums[r--]));
 					while (l < r && nums[l] == nums[l - 1]) {
 						l++;
 					}

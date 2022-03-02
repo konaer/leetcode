@@ -11,7 +11,6 @@ public class P451_SortCharactersByFrequency {
 	
 	//空间o(n + k)
 	public String frequencySort(String s) {
-		int count;
 		Map<Character, Integer> map = new HashMap<>();
 		for (char c : s.toCharArray()) {
 			count = map.getOrDefault(c, 0) + 1;
@@ -22,7 +21,7 @@ public class P451_SortCharactersByFrequency {
 		//正好是string的长度，所以list的长度是 string长度 + 1
 		List<Character>[] bucket = new List[s.length() + 1];
 		for (char key : map.keySet()) {
-			count = map.get(key);
+			int count = map.get(key);
 			if (bucket[count] == null) {
 				bucket[count] = new ArrayList<>();
 			}

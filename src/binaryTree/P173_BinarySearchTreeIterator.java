@@ -3,7 +3,8 @@ package binaryTree;
 import java.util.List;
 
 public class P173_BinarySearchTreeIterator {
-
+	//初始化需要n时间， 之后每次调用 1 时间
+	//空间 n，需要保存遍历结果
 	private int index;
 	private List<Integer> list;
 
@@ -18,6 +19,7 @@ public class P173_BinarySearchTreeIterator {
 	}
 
 	public boolean hasNext() {
+		//每次调用next（）完后，index指在下一个数了。
 		return index < list.size();
 	}
 

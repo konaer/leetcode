@@ -15,13 +15,13 @@ public class P215_KthLargestElementInArray {
 			return;
 		}
 		
-		int num = parition(nums, l, r);
-		if (num == nums.length - k) {
+		int index = parition(nums, l, r);
+		if (index == nums.length - k) {
 			return;
-		} else if (num <nums.length - k) {
-			helper(nums, num + 1, r, k);
+		} else if (index < nums.length - k) {
+			helper(nums, index + 1, r, k);
 		} else {
-			helper(nums, l, num - 1, k);
+			helper(nums, l, index - 1, k);
 		}
 	}
 	
@@ -53,8 +53,8 @@ public class P215_KthLargestElementInArray {
 	
 	
 	//使用堆
-	//时间nlogn, 建堆n， k个删除logn，所以是klogn
-	//总时间 n + klogn = nlogn
+	//时间nlogk, 建堆n， n个删除logk，所以是nlogk
+	//总时间 n + nlogk = nlogk
 	//空间 heap的空间， 放了n个数
 	public int findKthLargest(int[] nums, int k) {
 		Queue<Integer> pq = new PriorityQueue<>();
