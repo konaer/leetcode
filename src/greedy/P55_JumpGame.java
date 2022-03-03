@@ -11,9 +11,7 @@ public class P55_JumpGame {
                 if (end >= nums.length - 1) {
                     return true;
                 }
-            } else {
-                return false;
-            }
+            } 
         }
         return false;
     }
