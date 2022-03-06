@@ -122,6 +122,17 @@ public class commonAPI {
 		//substring, 不算越界，但是打不出来的情况
 		String s = "abc";
     	String sb = s.substring(3,3);
+    	
+    	//string中删除某个
+    	String s = "123";
+    	StringBuilder sb = new StringBuilder();
+    	sb.deleteCharAt(i);
+    	
+    	//String合并拆分
+    	String s = "1243";
+    	s.split(",");
+    	
+    	String.join(",", args)
 		
 	}
 }
