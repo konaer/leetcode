@@ -15,6 +15,9 @@ public class P99_RecoverBinarySearchTree {
 		helper(root.left);
 		if (pre != null) {
 			if (pre.val > root.val) {
+				//这里是发现错之后，先确定了m1，但是m2并不一定是root，
+				//也可能是恰好m1错了，把它带错了，所以接着找，直到再找到
+				//pre.va > root.val对的情况，才确定m2
 				if (m1 == null) {
 					m1 = pre;
 				}
