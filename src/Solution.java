@@ -4,10 +4,21 @@ import java.util.*;
 
 
 class Solution {
-    
-    public static void main(String[] args) {
-    	String s = "1,2,3,";
-    	String[] ns = s.split(",");
-    	System.out.println(ns);
+	
+	private static void p(int num) throws Exception {
+		try {
+			System.out.println(num);
+		} finally {
+			System.out.println("finished");
+		}
 	}
+    
+    public static void main(String[] args) throws Exception{
+    	Scanner s = new Scanner(System.in);
+    	int num = s.nextInt();
+    	p(num);
+    	s.close();
+	}
+
+	
 }
