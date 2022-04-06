@@ -12,22 +12,23 @@ public class P887_SuperEggDrop {
         	return n;
         }
         
+        //这个是为了取模让key包含n， k两个数的信息
         int key = n * 1000 + k;
         if (memo.containsKey(key)) {
         	return memo.get(key);
         }
         
-        int l = 1, h = n;
-        while (l + 1 < h) {
-        	int mid = l + (h - l) / 2;
+        int l = 1, r = n;
+        while (l + 1 < r) {
+        	int mid = l + (r - l) / 2;
         	int low = superEggDrop(k - 1, mid - 1);
         	int high = superEggDrop(k, n - mid);
         	if (low < high) {
         		l = mid;
         	} else if (low > high) {
-        		h = mid;
+        		r = mid;
         	} else {
-        		l = h = mid;
+        		l = r = mid;
         	}
         }
         
