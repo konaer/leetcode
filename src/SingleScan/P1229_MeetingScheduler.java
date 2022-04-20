@@ -1,5 +1,7 @@
 package SingleScan;
 
+import java.util.Arrays;
+
 public class P1229_MeetingScheduler {
 	//时间排序时间nlogn
 	//空间 排序空间logn
