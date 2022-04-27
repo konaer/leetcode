@@ -1,0 +1,18 @@
+
+
+#replace email address
+sed -E -i 's/[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]{2,5}/
+fake@email\.com/g'
+emails.html
+
+
+#randomly pick a line
+shuf -n 1 file.txt >output.txt
+
+
+##pick a line
+sed -n '99,p;100q' test.txt
+
+
+#last line
+tail -n 10 file.txt

@@ -1,6 +1,7 @@
 package z;
 
 public class N419_BattleShip {
+	//o(mn)
 	public int countBattleships(char[][] board) {
         int row = board.length;
         int col = board[0].length;
@@ -21,3 +22,6 @@ public class N419_BattleShip {
         return ans;
     }
 }
+
+//因此我们可以通过枚举每个战舰的左上顶点即可统计战舰的个数。
+

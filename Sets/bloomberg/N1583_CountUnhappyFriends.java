@@ -2,8 +2,11 @@ package z;
 
 public class N1583_CountUnhappyFriends {
 	//时空都是 n^2
+	
 	public int unhappyFriends(int n, int[][] preferences, int[][] pairs) {
-        int[][] order = new int[n][n];
+		//order[i][j] 表示朋友 jj 在 ii 的朋友列表中的亲近程度下标
+		
+		int[][] order = new int[n][n];
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n - 1; j++) {
                 order[i][preferences[i][j]] = j;

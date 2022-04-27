@@ -8,24 +8,24 @@ public class N430_FlattenMultilevelDoublyLinkedList {
 		return head;
 	}
 
-	private Node dfs(Node head) {
-		Node last = head;
-		while (head != null) {
-			if (head.child == null) {
-				last = head;
-				head = head.next;
+	private Node dfs(Node node) {
+		Node last = node;
+		while (node != null) {
+			if (node.child == null) {
+				last = node;
+				node = node.next;
 			} else {
-				Node tmp = head.next;
-				Node childLast = dfs(head.child);
-				head.next = head.child;
-				head.child.prev = head;
-				head.child = null;
-				if (childLast != null)
-					childLast.next = tmp;
-				if (tmp != null)
-					tmp.prev = childLast;
-				last = head;
-				head = childLast;
+				Node temp = node.next;
+				Node childLast = dfs(node.child);
+				node.next = node.child;
+				node.child.prev = node;
+				node.child = null;
+				
+				childLast.next = temp;
+				if (temp != null) {
+					temp.prev = childLast;
+				}
+				node = childLast;
 			}
 		}
 		return last;

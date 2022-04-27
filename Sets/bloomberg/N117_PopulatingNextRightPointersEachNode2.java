@@ -29,6 +29,7 @@ public class N117_PopulatingNextRightPointersEachNode2 {
         
         Node cur = root;
         while (cur != null) {
+        	//相当于每一层建立一个链表
         	Node dummy = new Node(0);
         	Node pre = dummy;
         	while (cur != null) {
