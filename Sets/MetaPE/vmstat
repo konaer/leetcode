@@ -1,4 +1,5 @@
-vmstat -n 1 | awk -W interactive -v limit="$1" -v target="$2" -v count="$3"
+vmstat -n 1 | awk -W interactive -v limit="$1" -v 
+ target="$2" -v count="$3"
 '
 {
 	if($1 == "procs") next;
