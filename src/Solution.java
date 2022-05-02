@@ -1,17 +1,23 @@
 
-
-import java.text.DecimalFormat;
 import java.util.*;
-
 
 class Solution {
     
-    public static void main(String[] args) {
-    	String s = "   1  2   3";
-    	String sa = s.trim();
-    	String[] t = sa.split("\\s+");
-    	System.out.println(Arrays.toString(t));
+	public static int find(String s, String target) {
+		int i = 0, j = 3;
+		int count = 0;
+		while (j <= s.length()) {
+			if (s.substring(i++, j++).equals(target)) {
+				count++;
+			}
+		}
+		return count;
 	}
-
 	
+    public static void main(String[] args) {
+    	String s = "abcbcbcaawe";
+    	String target = "cbc";
+    	System.out.println(find(s, target));
+    }
+    
 }
