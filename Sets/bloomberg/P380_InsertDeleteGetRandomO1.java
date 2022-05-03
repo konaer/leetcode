@@ -1,6 +1,6 @@
 package z;
 
-public class N380_InsertDeleteGetRandomO1 {
+public class P380_InsertDeleteGetRandomO1 {
 	//平均o1，但是最坏情况仍是n，元素超过哈希表容量导致的重新分配
 	Map<Integer, Integer> dict;
 	List<Integer> list;

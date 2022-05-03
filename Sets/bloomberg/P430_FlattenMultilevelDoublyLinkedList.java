@@ -2,7 +2,7 @@ package z;
 
 import org.w3c.dom.Node;
 
-public class N430_FlattenMultilevelDoublyLinkedList {
+public class P430_FlattenMultilevelDoublyLinkedList {
 	public Node flatten(Node head) {
 		dfs(head);
 		return head;

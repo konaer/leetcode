@@ -1,6 +1,6 @@
 package z;
 
-public class N1209_RemoveAllAdjacentDuplicatesinString2 {
+public class P1209_RemoveAllAdjacentDuplicatesinString2 {
 	public String removeDuplicates(String s, int k) {
         StringBuilder sb = new StringBuilder(s);
 	    Deque<Integer> stack = new ArrayDeque<>();

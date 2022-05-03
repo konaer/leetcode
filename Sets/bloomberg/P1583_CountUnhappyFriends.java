@@ -1,6 +1,6 @@
 package z;
 
-public class N1583_CountUnhappyFriends {
+public class P1583_CountUnhappyFriends {
 	//时空都是 n^2
 	
 	public int unhappyFriends(int n, int[][] preferences, int[][] pairs) {

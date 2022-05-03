@@ -1,6 +1,8 @@
 package z;
 
-public class N1244_DesignALeaderboard {
+import java.util.PriorityQueue;
+
+public class P1244_DesignALeaderboard {
 	private HashMap<Integer, Integer> scores = null;
 
 	public Leaderboard() {
@@ -12,11 +14,11 @@ public class N1244_DesignALeaderboard {
 	}
 
 	public int top(int K) {
-        PriorityQueue<Integer> pq = PriorityQueue<>((a, b) -> scores.get(a) - scores.get(b));
+        PriorityQueue<Integer> pq = new PriorityQueue<>((a, b) -> scores.get(a) - scores.get(b));
         
         for (int id : scores.keySet()) {
             pq.offer(id);
-            if (pq.size() > k) {
+            if (pq.size() > K) {
                 pq.poll();
             }
         }

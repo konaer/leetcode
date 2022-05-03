@@ -1,6 +1,6 @@
 package z;
 
-public class N445_AddTwoNumbers {
+public class P445_AddTwoNumbers {
 	//time o(m 或n哪个大)
 	public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         Deque<Integer> stack1 = new ArrayDeque<Integer>();

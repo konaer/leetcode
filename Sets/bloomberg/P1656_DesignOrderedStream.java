@@ -1,8 +1,8 @@
 package z;
 
-public class N1656_DesignOrderedStream {
+public class P1656_DesignOrderedStream {
 	private int ptr = 1;
-    private final String[] arr;
+    private String[] arr;
 
     public OrderedStream(int n) {
         arr = new String[n + 1];

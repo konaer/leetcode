@@ -8,15 +8,17 @@ public class P856_ScoreOfParentheses {
 		//time n
 		//space, stack space, n
 		Deque<Integer> stack = new ArrayDeque<>();
-		int cur = 0;
+		stack.push(0);
+		
 		for (char c : s.toCharArray()) {
 			if (c == '(') {
-				stack.push(cur);
-				cur = 0;
+				stack.push(0);
 			} else {
-				cur = stack.pop() + Math.max(cur * 2, 1);
+				int u = stack.pop();
+				int v = stack.pop();
+				stack.push(v + Math.max(u * 2, 1));
 			}
 		}
-		return cur;)
-    }
+		return stack.pop();
+	}
 }
