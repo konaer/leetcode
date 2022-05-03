@@ -1,3 +1,4 @@
+package z;
 
 public class P780_ReachingPoints {
 	//log(tx or ty)

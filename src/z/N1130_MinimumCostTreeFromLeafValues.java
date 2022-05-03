@@ -1,3 +1,4 @@
+package z;
 
 public class N1130_MinimumCostTreeFromLeafValues {
 	public int mctFromLeafValues(int[] arr) {
