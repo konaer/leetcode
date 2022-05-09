@@ -1,23 +1,38 @@
 
 import java.util.*;
 
-class Solution {
+class Person {
     
-	public static int find(String s, String target) {
-		int i = 0, j = 3;
-		int count = 0;
-		while (j <= s.length()) {
-			if (s.substring(i++, j++).equals(target)) {
-				count++;
-			}
-		}
-		return count;
+	static Map<String, Person> map = new HashMap<>();
+	int age;
+	int gender;
+	
+	public Person(int age, int gender) {
+		this.age = age;
+		this.gender = gender;
 	}
 	
-    public static void main(String[] args) {
-    	String s = "abcbcbcaawe";
-    	String target = "cbc";
-    	System.out.println(find(s, target));
-    }
-    
+	public int sum() {
+		return age + gender;
+	}
+	
+	public void create(String name) {
+		if (map.containsKey(name)) {
+			return;
+		}
+		
+		Person cur = new Person(1,2);
+		map.put(name, cur);
+		return;
+	}
+	
+	public void switch(String name) {
+		if (!map.containsKey(name)) {
+			return;
+		}
+	}
+
+	
 }
+
+
