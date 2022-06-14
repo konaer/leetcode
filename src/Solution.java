@@ -1,38 +1,48 @@
 
 import java.util.*;
 
-class Person {
+class Solution {
     
-	static Map<String, Person> map = new HashMap<>();
-	int age;
-	int gender;
-	
-	public Person(int age, int gender) {
-		this.age = age;
-		this.gender = gender;
-	}
-	
-	public int sum() {
-		return age + gender;
-	}
-	
-	public void create(String name) {
-		if (map.containsKey(name)) {
-			return;
+	public static List<Integer> find(int[] nums, int index) {
+		Set<Integer> set = new HashSet<>();
+		int[] arr = new int[nums.length];
+		int count = 0;
+		
+		for (int i = 0; i < nums.length; i++) {
+			if (i == index || set.contains(nums[i])) {
+				nums[i] = -2;
+				set.add(i);
+				count++;
+			}
+			arr[i] = count;
 		}
 		
-		Person cur = new Person(1,2);
-		map.put(name, cur);
-		return;
+
+		for (int i = 0; i < nums.length; i++) {
+			if (nums[i] < 0) {
+				continue;
+			} else {
+				nums[i] -= arr[nums[i]];
+			}
+		}
+		
+		List<Integer> ans = new ArrayList<>();
+		for (int num : nums) {
+			if (num != -2) {
+				ans.add(num);
+			}
+		}
+		return ans;
 	}
 	
-	public void switch(String name) {
-		if (!map.containsKey(name)) {
-			return;
+	public static void main(String[] args) {
+		int[] nums = {-1, 0, 0, 2, 3, 1};
+		int index = 3;
+		List<Integer> ans = find(nums, index);
+		for (int num : ans) {
+			System.out.print(num + " ");
 		}
 	}
-
-	
 }
 
 

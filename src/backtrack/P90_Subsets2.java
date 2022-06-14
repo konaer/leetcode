@@ -21,7 +21,6 @@ public class P90_Subsets2 {
 				continue;
 			}
 			list.add(nums[i]);
-			ans.add(new ArrayList<>(list));
 			dfs(nums, i + 1);
 			list.remove(list.size() - 1);
 		}

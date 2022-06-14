@@ -17,7 +17,7 @@ public class P1636_SortArraybyIncreasingFrequency {
 		for (int num : nums) {
 			int count = map.getOrDefault(num, 0) + 1;
 			map.put(num, count);
-			list.add(num);)
+			list.add(num);
 		}
 		
 		Collections.sort(list, (a, b) -> {
