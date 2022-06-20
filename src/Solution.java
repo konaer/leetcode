@@ -36,12 +36,9 @@ class Solution {
 	}
 	
 	public static void main(String[] args) {
-		int[] nums = {-1, 0, 0, 2, 3, 1};
-		int index = 3;
-		List<Integer> ans = find(nums, index);
-		for (int num : ans) {
-			System.out.print(num + " ");
-		}
+		System.out.println("haha");
+		System.out.println("heihie");
+		System.out.println("hehe");
 	}
 }
 

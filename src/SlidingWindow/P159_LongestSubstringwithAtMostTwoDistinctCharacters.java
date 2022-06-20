@@ -19,7 +19,7 @@ public class P159_LongestSubstringwithAtMostTwoDistinctCharacters {
         			map.remove(c);
         		}
         	}
-        	ans = Math.max(ans, right - left + 1);
+        	ans = Math.max(ans, right - left);
         }
         return ans;
     }

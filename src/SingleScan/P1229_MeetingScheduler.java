@@ -1,6 +1,8 @@
 package SingleScan;
 
 import java.util.Arrays;
+import java.util.List;
+import java.util.PriorityQueue;
 
 public class P1229_MeetingScheduler {
 	//时间排序时间nlogn
@@ -25,4 +27,30 @@ public class P1229_MeetingScheduler {
         }
         return new ArrayList<>();
     }
+	
+	//use PriorityQueue
+		//重点是，有交集就是分属不同的两个人了，所以可以把它们放在一个stack里面
+		public List<Integer> minAvailableDuration(int[][] slots1, int[][] slots2, int duration) {
+			PriorityQueue<int[]> heap = new PriorityQueue<>((a, b) -> a[0] - b[0]);
+			for (int[] slot : slots1) {
+				if (slot[1] - slot[0] >= duration) {
+					heap.offer(slot);
+				}
+			}
+			
+			for (int[] slot : slots2) {
+				if (slot[1] - slot[0] >= duration) {
+					heap.offer(slot);
+				}
+			}
+			
+			//注意这了是>1,不是isEmpty,否则下面的peek会越界
+			while (heap.size() > 1) {
+				int[] slot1 = heap.poll();
+				int[] slot2 = heap.peek();
+				if (slot1[1] - slot2[0] >= duration) {
+					return List.of(slot2[0], slot2[0] + duration);
+				}
+			}
+			return new ArrayList<>();
 }
