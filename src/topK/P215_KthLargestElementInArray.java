@@ -39,7 +39,7 @@ public class P215_KthLargestElementInArray {
 	
 	//如果用random的取pivot方法
 //	private int randomParition(int[] nums, int l, int r) {
-//        int index = (int) Math.random() * (r - l + 1) + l;
+//        int index = (int) (Math.random() * (r - l + 1) + l);
 //        swap(nums, index, r);
 //        return parition(nums, l, r);
 //    }

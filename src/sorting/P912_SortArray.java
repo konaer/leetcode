@@ -2,39 +2,45 @@ package sorting;
 
 public class P912_SortArray {
 	//快排
-	//期望是 nlogn，最差n
+	//期望是 nlogn，最差n^2
 	//空间介于logn和n之间
 	public int[] sortArray(int[] nums) {
-		quickSort(nums, 0, nums.length - 1);
-		return nums;
+        quickSort(nums, 0, nums.length - 1);
+        return nums;
     }
-	
-	private void quickSort(int[] nums, int left, int right) {
-		if (left >= right) {
-			return;
-		}
-		int index = parition(nums, left, right);
-		quickSort(nums, left, index - 1);
-		quickSort(nums, index + 1, right);
-	}
-	
-	private int parition(int[] nums, int left, int right) {
-		int pivot = nums[right];
-		int wall = left;
-		for (int i = left; i < right; i++) {
-			if (nums[i] < pivot) {
-				swap(nums, i, wall++);
-			}
-		}
-		swap(nums, right, wall);
-		return wall;
-	}
-	
-	private void swap(int[] nums, int l, int r) {
-		int temp = nums[l];
-		nums[l] = nums[r];
-		nums[r] = temp;
-	}
+
+    private void quickSort(int[] nums, int l, int r) {
+        if (l >= r) {
+            return;
+        }
+        int index = randomPartition(nums, l, r);
+        quickSort(nums, l, index - 1);
+        quickSort(nums, index + 1, r);
+    }
+
+    private int randomPartition(int[] nums, int l, int r) {
+        int index = (int) (Math.random() * (r - l + 1) + l);
+        swap(nums, index, r);
+        return partition(nums, l, r);
+    }
+
+    private int partition(int[] nums, int l, int r) {
+        int pivot = nums[r];
+        int wall = l;
+        for (int i = l; i < r; i++) {
+            if (nums[i] <= pivot) {
+                swap(nums, i, wall++);
+            }
+        }
+        swap(nums, wall, r);
+        return wall;
+    }
+
+    private void swap(int[] nums, int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
 	
 	
 	

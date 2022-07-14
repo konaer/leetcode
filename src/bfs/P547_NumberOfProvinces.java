@@ -19,9 +19,9 @@ public class P547_NumberOfProvinces {
 				while (!queue.isEmpty()) {
 					int cur = queue.poll();
 					for (int j = 0; j < n; j++)
-				if (isConnected[cur][j] == 1 && !visited[j]) {
-						queue.offer(j);
-						visited[j] = true;						
+						if (isConnected[cur][j] == 1 && !visited[j]) {
+							queue.offer(j);
+							visited[j] = true;						
 					}
 				}
 			}

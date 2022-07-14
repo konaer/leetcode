@@ -13,12 +13,8 @@ public class P286_WallsAndGates {
     }
     
     private void dfs(int[][] rooms, int i, int j, int index) {
-        if (!isValid(rooms, i, j) || rooms[i][j] < index) {
+        if (!isValid(rooms, i, j) || (index != 0 && rooms[i][j] <= index)) {
             return;
-        }
-        
-        if (index != 0 && rooms[i][j] <= index) {
-        	return;
         }
         
         rooms[i][j] = index;

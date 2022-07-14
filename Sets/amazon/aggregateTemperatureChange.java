@@ -4,7 +4,7 @@ package z;
 
 public class aggregateTemperatureChange {
 	public static int find(int[] nums) {
-		int ans = 0, ag = 0;
+		int ans = 0, ag = Integer.MIN_VALUE;
 		int sum = 0;
 		for (int num : nums) {
 			sum += num;

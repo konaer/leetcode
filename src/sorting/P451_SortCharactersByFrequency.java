@@ -13,7 +13,7 @@ public class P451_SortCharactersByFrequency {
 	public String frequencySort(String s) {
 		Map<Character, Integer> map = new HashMap<>();
 		for (char c : s.toCharArray()) {
-			count = map.getOrDefault(c, 0) + 1;
+			int count = map.getOrDefault(c, 0) + 1;
 			map.put(c, count);
 		}
 		

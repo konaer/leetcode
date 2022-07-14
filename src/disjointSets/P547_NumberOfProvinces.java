@@ -29,7 +29,6 @@ public class P547_NumberOfProvinces {
 		private int[] rank;
 
 		public UnionFind(int n) {
-			this.size = n;
 			this.parent = new int[n];
 			this.rank = new int[n];
 			for (int i = 0; i < n; i++) {

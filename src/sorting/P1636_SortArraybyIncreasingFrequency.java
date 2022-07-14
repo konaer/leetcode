@@ -24,7 +24,7 @@ public class P1636_SortArraybyIncreasingFrequency {
 			if (map.get(a) == map.get(b)) {
 				return b - a;
 			} else {
-				return map.get(a) - map.get(b)
+				return map.get(a) - map.get(b);
 			}
 		});
 		
